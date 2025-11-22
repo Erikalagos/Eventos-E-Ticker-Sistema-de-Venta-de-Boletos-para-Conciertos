@@ -1,0 +1,41 @@
+.login-container {
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 24px;
+    font-weight: 700;
+    color: #3880ff; // color azul ionic
+  }
+
+  ion-item {
+    --background: #f5f7fa;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    --highlight-height: 3px;
+  }
+
+  .btn-login {
+    --background: #3880ff;
+    --border-radius: 30px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  .signup-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  ion-router-link {
+    color: #3880ff;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

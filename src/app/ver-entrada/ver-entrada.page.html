@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Entrada Generada</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="entrada">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ entrada.cliente }}</ion-card-title>
+      <ion-card-subtitle>Entrada #{{ entrada.id }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Evento:</strong> {{ entrada.nombreEvento || entrada.eventoNombre }}</p>
+      <p><strong>Zona:</strong> {{ entrada.nombreZona }}</p>
+      <p><strong>Precio:</strong> L {{ entrada.precioCompra || entrada.precio }}</p>
+      <!-- 👇 AQUÍ VA LA PIPE CORRECTA -->
+      <p><strong>Fecha compra:</strong> {{ entrada.fechaCompra | date:'short' }}</p>
+      <!-- NADA de | fecha:'corta' -->
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Código QR</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="ion-text-center">
+      <!-- angularx-qrcode standalone component -->
+      <qrcode
+        *ngIf="qrData"
+        [qrdata]="qrData"
+        [width]="220"
+        [errorCorrectionLevel]="'M'">
+      </qrcode>
+      <!-- NADA de [ancho], solo [width] -->
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

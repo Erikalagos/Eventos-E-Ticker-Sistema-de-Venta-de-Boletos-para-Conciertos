@@ -1,0 +1,33 @@
+ion-menu {
+  --background: #121212;
+  --color: #ffffff;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.4);
+}
+
+ion-list-header {
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 1rem 1.5rem;
+  color: #ff6f61;
+  border-bottom: 1px solid #ff6f61;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+ion-item[selected], ion-item.router-link-active {
+  --background: #ff6f61;
+  --color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  margin: 0 10px;
+  box-shadow: 0 2px 8px rgba(255, 111, 97, 0.7);
+}
+
+ion-icon {
+  color: #ff6f61;
+}
+
+ion-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+}

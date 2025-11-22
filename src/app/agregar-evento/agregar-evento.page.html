@@ -1,0 +1,63 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center" style="font-weight: 700; letter-spacing: 1.2px;">
+      🎫 Agregar Evento
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="eventoForm" (ngSubmit)="guardarEvento()">
+    <ion-card color="light" style="border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+      <ion-card-header>
+        <ion-card-title style="font-weight: 600; font-size: 1.3rem; color: #3880ff;">
+          Datos del Evento
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item lines="full" class="input-item">
+          <ion-label position="floating" color="primary">🎤 Nombre</ion-label>
+          <ion-input formControlName="nombre" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full" class="input-item">
+          <ion-label position="floating" color="primary">📝 Descripción</ion-label>
+          <ion-textarea formControlName="descripcion" required rows="3"></ion-textarea>
+        </ion-item>
+
+        <ion-item lines="full" class="input-item">
+          <ion-label position="floating" color="primary">📅 Fecha</ion-label>
+          <ion-datetime
+            formControlName="fecha"
+            presentation="date"
+            display-format="YYYY-MM-DD"
+            placeholder="Selecciona fecha"
+          ></ion-datetime>
+        </ion-item>
+
+        <ion-item lines="full" class="input-item">
+          <ion-label position="floating" color="primary">📍 Lugar</ion-label>
+          <ion-input formControlName="lugar" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="full" class="input-item">
+          <ion-label position="floating" color="primary">🎟️ Boletos Disponibles</ion-label>
+          <ion-input type="number" formControlName="boletosDisponibles" required min="1"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button
+      expand="block"
+      type="submit"
+      color="success"
+      shape="round"
+      style="margin-top: 20px; font-weight: 600;"
+      [disabled]="eventoForm.invalid"
+    >
+      <ion-icon name="save-outline" slot="start"></ion-icon>
+      Guardar Evento
+    </ion-button>
+  </form>
+</ion-content>

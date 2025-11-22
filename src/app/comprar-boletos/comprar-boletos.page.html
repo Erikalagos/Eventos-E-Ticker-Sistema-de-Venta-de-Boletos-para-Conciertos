@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Comprar Boletos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list lines="full">
+
+    <ion-item>
+      <ion-label position="floating">Nombre del Cliente</ion-label>
+      <ion-input [(ngModel)]="cliente"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Evento</ion-label>
+      <ion-select
+        [disabled]="cargandoEventos"
+        placeholder="Selecciona un evento"
+        (ionChange)="onEventoChange($event)"
+        [value]="eventoSeleccionadoId">
+        <ion-select-option *ngFor="let ev of eventos" [value]="ev.id">
+          {{ ev.nombre }} - {{ ev.fecha | date:'shortDate' }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="cargandoZonas">
+      <ion-label>Cargando zonas...</ion-label>
+      <ion-spinner slot="end"></ion-spinner>
+    </ion-item>
+
+    <ion-item *ngIf="!cargandoZonas">
+      <ion-label>Zona</ion-label>
+      <ion-select
+        [disabled]="!zonas || zonas.length === 0"
+        placeholder="Selecciona una zona"
+        [(ngModel)]="zonaSeleccionadaId">
+        <ion-select-option *ngFor="let z of zonas" [value]="z.id">
+          {{ z.nombre }} - L {{ z.precio }} ({{ z.capacidad - z.vendidas }} disp.)
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button
+    expand="block"
+    color="secondary"
+    (click)="comprar()"
+    [disabled]="comprando">
+    <ion-spinner *ngIf="comprando" slot="start"></ion-spinner>
+    Confirmar Compra
+  </ion-button>
+
+</ion-content>

@@ -1,0 +1,15 @@
+.contenedor {
+  display: flex;
+  flex-direction: row;
+}
+
+.izquierda {
+  flex: 1;
+  padding: 10px;
+}
+
+.derecha {
+  flex: 1;
+  padding: 10px;
+  border-left: 1px solid #ccc;
+}

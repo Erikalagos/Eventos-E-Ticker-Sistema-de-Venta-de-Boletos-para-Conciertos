@@ -1,0 +1,22 @@
+// src/app/guards/auth.guard.ts
+
+import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthGuard implements CanActivate {
+
+  constructor(private router: Router) {}
+
+  canActivate(): boolean {
+    const logueado = localStorage.getItem('usuarioLogueado');
+    if (logueado === 'true') {
+      return true; // usuario logueado, puede entrar
+    } else {
+      this.router.navigate(['/login']); // no está logueado, lo mando al login
+      return false;
+    }
+  }
+}

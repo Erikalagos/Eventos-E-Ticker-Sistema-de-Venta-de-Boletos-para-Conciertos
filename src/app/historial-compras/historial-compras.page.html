@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Historial de Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div *ngIf="cargando" class="ion-text-center ion-padding">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando historial...</p>
+  </div>
+
+  <div *ngIf="!cargando && error" class="ion-text-center ion-padding">
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="!cargando && !error && compras.length === 0" class="ion-text-center ion-padding">
+    <ion-card>
+      <ion-card-content class="ion-text-center">
+        <ion-icon name="receipt-outline" style="font-size: 40px;"></ion-icon>
+        <p>No hay compras registradas aún.</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-list *ngIf="!cargando && !error && compras.length > 0">
+    <ion-item *ngFor="let c of compras">
+      <ion-label>
+        <h2>{{ c.cliente }}</h2>
+        <p>
+          Evento: {{ c.nombreEvento }}<br>
+          Zona: {{ c.nombreZona }}<br>
+          Precio: L {{ c.precioCompra || c.precio }}<br>
+          Fecha: {{ c.fechaCompra | date:'short' }}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
