@@ -1,8 +1,10 @@
 🚀 Características Principales
-<img width="1917" height="887" alt="pantalla principal" src="https://github.com/user-attachments/assets/68d72cd0-02db-439d-9f1c-497f9f2d30f0" />
-<img width="1920" height="1080" alt="Captura de pantalla (183)" src="https://github.com/user-attachments/assets/39969a5a-f837-4509-8569-bb690043e9c6" />
-<img width="1892" height="809" alt="Captura de pantalla 2025-11-21 193626" src="https://github.com/user-attachments/assets/a57695c4-ee25-4fbf-8ff4-0ccd547e45a1" />
-<img width="1907" height="376" alt="Captura de pantalla 2025-11-21 193658" src="https://github.com/user-attachments/assets/4b469535-5e76-40bd-8470-1188e0aceb75" />
+<img width="1918" height="858" alt="image" src="https://github.com/user-attachments/assets/ca754963-04d0-4ad1-a5a1-8c96555f6c23" />
+<img width="1907" height="855" alt="image" src="https://github.com/user-attachments/assets/622f870c-6580-433e-ae99-4ae86b93e8b6" />
+<img width="1908" height="802" alt="image" src="https://github.com/user-attachments/assets/66e7b30b-d92f-481b-b24a-f1020855f29a" />
+<img width="1906" height="846" alt="image" src="https://github.com/user-attachments/assets/bcbdf5bc-621d-470e-9773-7b23797515a2" />
+<img width="1832" height="842" alt="image" src="https://github.com/user-attachments/assets/6bfde17c-cc16-4aea-a0a2-2282b6b8776f" />
+
 
 ✔ Listado de eventos musicales
 ✔ Detalle completo del concierto (fecha, hora, lugar, descripción)
